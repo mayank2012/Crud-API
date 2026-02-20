@@ -1,15 +1,15 @@
-const http = Request("http");
+const http = require("http");
 
-const server = http.createserver((Req, res) => {
-  if (Req.url === "/") {
-    Res.write("hello world");
-    Req.end();
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.write("hello world");
+    res.end();
   }
-  if (Req.url === "/api/courses") {
-    Res.write(JSON.stringify([1, 2, 3]));
-    Res.end();
+  if (req.url === "/api/courses") {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
   }
 });
 server.listen(5000);
 
-console.log("Listening on porst 5000...");
+console.log("Listening on port 5000...");
